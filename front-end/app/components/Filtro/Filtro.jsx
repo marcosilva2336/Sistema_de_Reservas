@@ -14,7 +14,7 @@ const InspirationalText = styled.h1`
   font-size: 20px;
   color: #191F28;
   margin-bottom: 20px;
-  margin-left: 150px;
+  margin-left: 100px;
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -41,8 +41,8 @@ const FilterCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
   background-color: #fdf9f9;
   color: rgb(0, 151, 255);
@@ -103,7 +103,7 @@ const Filtro = () => {
               <FaBook />
             </FilterIcon>
           </FilterCard>
-          <FilterName>Cursos</FilterName>
+          <FilterName>Programação</FilterName>
         </FilterWrapper>
         <FilterWrapper>
           <FilterCard>

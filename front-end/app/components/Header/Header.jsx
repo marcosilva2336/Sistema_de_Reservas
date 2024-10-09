@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaSearch, FaBars } from 'react-icons/fa';
 
 const FixedContainer = styled.div`
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -89,6 +89,7 @@ const LoginLink = styled.a`
 `;
 
 const SignupButton = styled.button`
+  position: relative;
   padding: 12px 16px;
   font-size: 12px;
   border: 1px solid rgb(0, 151, 255);
@@ -97,12 +98,31 @@ const SignupButton = styled.button`
   border-style: solid;
   border-radius: 8px;
   background-color: transparent;
-  color: rgb(0, 151, 255);
   cursor: pointer;
   text-transform: uppercase;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgb(0, 151, 255);
+    z-index: -1;
+    transition: transform 0.3s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+  }
+
+  &:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+  }
 
   &:hover {
-    background-color: rgb(0, 151, 255);
     color: #fff;
   }
 `;
