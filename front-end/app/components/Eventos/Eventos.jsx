@@ -37,10 +37,10 @@ const SectionHeader = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  position: relative; /* Adiciona posição relativa para o contêiner pai */
+  position: relative; 
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Alinha os elementos em coluna */
+    flex-direction: column; 
     margin-bottom: 10px;
   }
 
