@@ -77,12 +77,21 @@ const CardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const CardImage = styled.img`
   width: 60%;
   object-fit: cover;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const CardContent = styled.div`
@@ -91,6 +100,10 @@ const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const CardDate = styled.div`
@@ -150,6 +163,11 @@ const DetailsButton = styled.button`
   &:hover {
     color: #fff;
   }
+
+  @media (max-width: 768px) {
+    padding: 8px 12px; /* Reduz o tamanho do botão */
+    margin-top: 10px; /* Adiciona margem superior */
+  }
 `;
 
 const DotsContainer = styled.div`
@@ -163,7 +181,7 @@ const Dot = styled.div`
   height: 10px;
   margin: 0 5px;
   border-radius: 50%;
-  background-color: ${({ active }) => (active ? '#007aff' : '#ddd')};
+  background-color: ${({ $active }) => ($active ? '#007aff' : '#ddd')}; /* Usando $ para transient prop */
   cursor: pointer;
 `;
 
@@ -244,7 +262,7 @@ const Destaques = () => {
                 {eventos.map((_, index) => (
                     <Dot
                         key={index}
-                        active={index === currentPage}
+                        $active={index === currentPage}
                         onClick={() => handleDotClick(index)}
                     />
                 ))}

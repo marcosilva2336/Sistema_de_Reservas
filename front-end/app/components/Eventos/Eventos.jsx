@@ -141,7 +141,7 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%; /* Ajusta a largura para 90% em telas menores */
   }
 
   @media (min-width: 1920px) {
@@ -151,14 +151,9 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 150px;
   object-fit: cover;
 
   @media (max-width: 768px) {
-    height: 120px;
-  }
-
-  @media (min-width: 1920px) {
     height: 180px;
   }
 `;
@@ -215,7 +210,6 @@ const CardLocation = styled.div`
     font-size: 16px;
   }
 `;
-
 const eventosData = [
     {
       sectionTitle: "Venha agora fazer um curso",
