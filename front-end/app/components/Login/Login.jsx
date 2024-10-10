@@ -9,7 +9,7 @@ const dismissEffect = keyframes`
     opacity: 1;
   }
   100% {
-    transform: scale(0);  /* Diminui o modal até desaparecer completamente */
+    transform: scale(0);
     opacity: 0;
   }
 `;
@@ -21,10 +21,9 @@ const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 420px;
   height: 440px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: #fff; /* Fundo branco */
+  border: 2px solid rgba(0, 151, 255, 0.5); /* Borda azul clara */
   border-radius: 20px;
-  backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -63,7 +62,7 @@ const FormBox = styled.div`
 
 const Title = styled.h2`
   font-size: 2em;
-  color: #fff;
+  color: #000; /* Título preto */
   text-align: center;
 `;
 
@@ -71,7 +70,7 @@ const InputBox = styled.div`
   position: relative;
   width: 100%;
   height: 50px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000; /* Borda inferior preta */
   margin: 30px 0;
 `;
 
@@ -80,7 +79,7 @@ const Label = styled.label`
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  color: #fff;
+  color: #000; /* Texto do label preto */
   font-weight: 500;
   pointer-events: none;
   transition: 0.5s;
@@ -93,7 +92,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 1em;
-  color: #fff;
+  color: #000; /* Texto preto */
   font-weight: 600;
   padding: 0 35px 0 5px;
 
@@ -107,13 +106,13 @@ const Icon = styled.span`
   position: absolute;
   right: 8px;
   font-size: 1.2em;
-  color: #fff;
+  color: rgb(0, 151, 255); /* Ícones azuis */
   line-height: 57px;
 `;
 
 const RememberForgot = styled.div`
   font-size: 0.9em;
-  color: #fff;
+  color: #000; /* Texto preto */
   font-weight: 500;
   margin: -15px 0 15px;
   display: flex;
@@ -125,13 +124,13 @@ const CheckboxLabel = styled.label`
   align-items: center;
 
   input {
-    accent-color: rgb(0, 151, 255); /* Usando a cor azul */
+    accent-color: rgb(0, 151, 255); /* Checkbox azul */
     margin-right: 3px;
   }
 `;
 
 const Link = styled.a`
-  color: #fff;
+  color: rgb(0, 151, 255); /* Links azuis */
   text-decoration: none;
 
   &:hover {
@@ -142,7 +141,7 @@ const Link = styled.a`
 const Button = styled.button`
   width: 100%;
   height: 45px;
-  background: rgb(0, 151, 255); /* Usando a cor azul */
+  background: rgb(0, 151, 255); /* Botão azul */
   border: none;
   outline: none;
   border-radius: 6px;
@@ -152,19 +151,19 @@ const Button = styled.button`
   font-weight: 500;
 
   &:hover {
-    background: #005f9e; /* Sombra mais escura do azul para hover */
+    background: #005f9e; /* Sombra mais escura do azul no hover */
   }
 `;
 
 const LoginRegister = styled.div`
   font-size: 0.9em;
-  color: #fff;
+  color: #000; /* Texto preto */
   text-align: center;
   font-weight: 500;
   margin: 25px 0 10px;
 
   p a {
-    color: #fff;
+    color: rgb(0, 151, 255); /* Links azuis */
     text-decoration: none;
     font-weight: 600;
 
