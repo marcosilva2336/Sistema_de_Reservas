@@ -15,22 +15,21 @@ const dismissEffect = keyframes`
 `;
 
 const Wrapper = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 420px;
-  height: 440px;
-  background: #fff; /* Fundo branco */
-  border: 2px solid rgba(0, 151, 255, 0.5); /* Borda azul clara */
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: transform 0.5s ease, height 0.2s ease;
-  animation: ${({ isClosing }) => (isClosing ? dismissEffect : 'none')} 0.5s forwards;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 650px;
+height: 500px;
+background: white;
+border-radius: 20px;
+backdrop-filter: blur(20px);
+box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+transition: transform 0.5s ease, height 0.2s ease;
 `;
 
 const IconClose = styled.div`
@@ -39,7 +38,7 @@ const IconClose = styled.div`
   right: 0;
   width: 45px;
   height: 45px;
-  background: #272727;
+  background: rgb(0, 151, 255);
   font-size: 2em;
   color: #fff;
   display: flex;
@@ -61,8 +60,8 @@ const FormBox = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2em;
-  color: #000; /* Título preto */
+  font-size: 2.5em; 
+  color: rgb(0, 151, 255); 
   text-align: center;
 `;
 
@@ -70,17 +69,16 @@ const InputBox = styled.div`
   position: relative;
   width: 100%;
   height: 50px;
-  border-bottom: 2px solid #000; /* Borda inferior preta */
+  border-bottom: 2px solid #A0A0A0; 
   margin: 30px 0;
 `;
-
 const Label = styled.label`
   position: absolute;
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
-  color: #000; /* Texto do label preto */
-  font-weight: 500;
+  color: #555555;
+  font-weight: 600;
   pointer-events: none;
   transition: 0.5s;
 `;
@@ -99,6 +97,7 @@ const Input = styled.input`
   &:focus ~ ${Label},
   &:valid ~ ${Label} {
     top: -5px;
+    color:rgb(0, 151, 255);
   }
 `;
 
@@ -106,7 +105,7 @@ const Icon = styled.span`
   position: absolute;
   right: 8px;
   font-size: 1.2em;
-  color: rgb(0, 151, 255); /* Ícones azuis */
+  color: rgb(0, 151, 255);
   line-height: 57px;
 `;
 
@@ -124,7 +123,7 @@ const CheckboxLabel = styled.label`
   align-items: center;
 
   input {
-    accent-color: rgb(0, 151, 255); /* Checkbox azul */
+    accent-color: rgb(0, 151, 255); 
     margin-right: 3px;
   }
 `;

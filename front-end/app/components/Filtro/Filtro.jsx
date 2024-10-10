@@ -54,6 +54,12 @@ const FilterCard = styled.div`
     background-color: rgb(0, 151, 255);
     color: #fff;
   }
+
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
+    width: 154px;
+    height: 154px;
+  }
 `;
 
 const FilterIcon = styled.div`

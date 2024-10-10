@@ -14,7 +14,8 @@ const Container = styled.div`
     margin-top: 40px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px){
     padding: 0 48px;
     margin-top: 100px;
   }
@@ -27,7 +28,8 @@ const Section = styled.div`
     margin-bottom: 20px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px){
     margin-bottom: 60px;
   }
 `;
@@ -44,7 +46,8 @@ const SectionHeader = styled.div`
     margin-bottom: 10px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     margin-bottom: 30px;
   }
 `;
@@ -62,7 +65,8 @@ const SectionTitle = styled.h2`
     text-align: center;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px){
     font-size: 24px;
     margin-left: 150px;
   }
@@ -79,7 +83,8 @@ const NavButtons = styled.div`
     margin-top: 10px; /* Adiciona margem superior para separar do título */
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     right: 150px;
     top: -50px;
   }
@@ -107,7 +112,8 @@ const NavButton = styled.button`
     height: 35px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     width: 45px;
     height: 45px;
   }
@@ -123,7 +129,8 @@ const CardsContainer = styled.div`
     gap: 20px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     gap: 50px;
   }
 `;
@@ -144,8 +151,8 @@ const Card = styled.div`
     width: 90%; /* Ajusta a largura para 90% em telas menores */
   }
 
-  @media (min-width: 1920px) {
-    width: 300px;
+  @media (max-width: 1920px) {
+    width: 385px;
   }
 `;
 
@@ -206,7 +213,8 @@ const CardLocation = styled.div`
     font-size: 12px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     font-size: 16px;
   }
 `;

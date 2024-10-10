@@ -14,7 +14,8 @@ const Container = styled.div`
     margin-top: 40px;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     padding: 0 48px;
     margin-top: 100px;
   }
@@ -32,7 +33,8 @@ const SectionHeader = styled.div`
     margin-bottom: 10px;
   }
 
-  @media (min-width: 1920px) {
+  
+@media (min-width: 1920px) and (min-height: 1080px){
     margin-bottom: 30px;
   }
 `;
@@ -50,7 +52,8 @@ const SectionTitle = styled.h2`
     text-align: center;
   }
 
-  @media (min-width: 1920px) {
+  
+  @media (min-width: 1920px) and (min-height: 1080px) {
     font-size: 24px;
     margin-left: 140px;
   }
@@ -81,6 +84,12 @@ const CardContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+
+  
+  @media (min-width: 1900px) {
+    max-width: 1620px;
+  }
+  
 `;
 
 const CardImage = styled.img`
@@ -179,7 +188,7 @@ const DotsContainer = styled.div`
 const Dot = styled.div`
   width: 10px;
   height: 10px;
-  margin: 0 5px;
+  margin: 0 10px;
   border-radius: 50%;
   background-color: ${({ $active }) => ($active ? '#007aff' : '#ddd')}; /* Usando $ para transient prop */
   cursor: pointer;
