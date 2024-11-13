@@ -206,7 +206,7 @@ const Header = () => {
         <AccountContainer>
           <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
-          <SignupButton>Cadastre-se</SignupButton>
+          <SignupButton onClick={() => window.location.href = '/cadastro'}>Cadastre-se</SignupButton>
         </AccountContainer>
       </HeaderContainer>
       <MobileMenu $isOpen={isMenuOpen}>
@@ -219,7 +219,7 @@ const Header = () => {
         <AccountContainer>
           <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
-          <SignupButton>Cadastre-se</SignupButton>
+          <SignupButton onClick={() => window.location.href = '/cadastro'}>Cadastre-se</SignupButton>
         </AccountContainer>
       </MobileMenu>
     </FixedContainer>

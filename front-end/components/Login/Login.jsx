@@ -1,35 +1,37 @@
 "use client"
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { FaEnvelope, FaLock, FaTimes } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 const dismissEffect = keyframes`
   0% {
-    transform: scale(1);
     opacity: 1;
   }
   100% {
-    transform: scale(0);
     opacity: 0;
   }
 `;
 
 const Wrapper = styled.div`
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 650px;
-height: 500px;
-background: white;
-border-radius: 20px;
-backdrop-filter: blur(20px);
-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
-transition: transform 0.5s ease, height 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.5s ease, height 0.2s ease;
+  ${({ isClosing }) => isClosing && css`
+    animation: ${dismissEffect} 0.5s forwards;
+  `}
 `;
 
 const IconClose = styled.div`
@@ -90,7 +92,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 1em;
-  color: #000; /* Texto preto */
+  color: #000; 
   font-weight: 600;
   padding: 0 35px 0 5px;
 
@@ -111,7 +113,7 @@ const Icon = styled.span`
 
 const RememberForgot = styled.div`
   font-size: 0.9em;
-  color: #000; /* Texto preto */
+  color: #000; 
   font-weight: 500;
   margin: -15px 0 15px;
   display: flex;
@@ -129,7 +131,7 @@ const CheckboxLabel = styled.label`
 `;
 
 const Link = styled.a`
-  color: rgb(0, 151, 255); /* Links azuis */
+  color: rgb(0, 151, 255); 
   text-decoration: none;
 
   &:hover {
@@ -140,29 +142,29 @@ const Link = styled.a`
 const Button = styled.button`
   width: 100%;
   height: 45px;
-  background: rgb(0, 151, 255); /* Botão azul */
+  background: rgb(0, 151, 255); 
   border: none;
   outline: none;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer; 
   font-size: 1em;
   color: #fff;
   font-weight: 500;
 
   &:hover {
-    background: #005f9e; /* Sombra mais escura do azul no hover */
+    background: #005f9e; 
   }
 `;
 
 const LoginRegister = styled.div`
   font-size: 0.9em;
-  color: #000; /* Texto preto */
+  color: #000; 
   text-align: center;
   font-weight: 500;
   margin: 25px 0 10px;
 
   p a {
-    color: rgb(0, 151, 255); /* Links azuis */
+    color: rgb(0, 151, 255); 
     text-decoration: none;
     font-weight: 600;
 
@@ -172,14 +174,15 @@ const LoginRegister = styled.div`
   }
 `;
 
-const LoginModal = ({ onClose }) => {
+const Login = () => {
   const [isClosing, setIsClosing] = useState(false);
+  const router = useRouter();
 
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
-      onClose();
-    }, 500); // Tempo da animação de fechamento
+      router.push('/'); 
+    }, 500);
   };
 
   return (
@@ -212,7 +215,7 @@ const LoginModal = ({ onClose }) => {
         <Button>Login</Button>
         <LoginRegister>
           <p>
-            Don't have an account? <Link href="#">Register</Link>
+            Don't have an account? <Link href="/cadastro">Register</Link>
           </p>
         </LoginRegister>
       </FormBox>
@@ -220,4 +223,4 @@ const LoginModal = ({ onClose }) => {
   );
 };
 
-export default LoginModal;
+export default Login;

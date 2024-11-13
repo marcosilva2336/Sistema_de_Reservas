@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Section = styled.div`
-  margin-bottom: 40px; /* Adiciona distância entre as seções */
+  margin-bottom: 40px; 
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
@@ -75,12 +75,12 @@ const SectionTitle = styled.h2`
 const NavButtons = styled.div`
   display: flex;
   gap: 8px;
-  position: absolute; /* Adiciona posição absoluta para o contêiner dos botões */
+  position: absolute; 
   right: 100px;
 
   @media (max-width: 768px) {
-    position: static; /* Remove a posição absoluta */
-    margin-top: 10px; /* Adiciona margem superior para separar do título */
+    position: static; 
+    margin-top: 10px; 
   }
 
   
@@ -144,14 +144,14 @@ const Card = styled.div`
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona box-shadow no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
 
   @media (max-width: 768px) {
-    width: 90%; /* Ajusta a largura para 90% em telas menores */
+    width: 90%;
   }
 
-  @media (max-width: 1920px) {
+  @media (min-width: 1920px) {
     width: 385px;
   }
 `;
@@ -223,6 +223,12 @@ const eventosData = [
       sectionTitle: "Venha agora fazer um curso",
       category: "programação",
       events: [
+        {
+          image: "https://via.placeholder.com/250x150",
+          date: "Sex, 04 Out · 20:00",
+          title: "Curso de React",
+          location: "Multiplan Hall - ParkJacarepaguá - Rio de Janeiro, RJ"
+        },
         {
           image: "https://via.placeholder.com/250x150",
           date: "Sex, 04 Out · 20:00",

@@ -3,71 +3,47 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color: rgb(76, 87, 108);
+  background-color: #007BFF;
   color: #fff;
-  padding: 20px 24px;
+  padding: 10px 20px;
   text-align: center;
-
-  @media (max-width: 768px) {
-    padding: 16px;
-  }
-
-  @media (min-width: 1920px) {
-    padding: 24px 48px;
-  }
 `;
 
 const FooterLinks = styled.div`
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 10px;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
 `;
 
 const FooterLink = styled.a`
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
 
   &:hover {
     text-decoration: underline;
   }
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 16px;
-  }
 `;
 
 const FooterText = styled.p`
-  font-size: 14px;
+  font-size: 12px;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 16px;
-  }
 `;
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterLinks>
-        <FooterLink href="#terms">Termos e Condições</FooterLink>
+        <FooterLink href="#terms">Termos</FooterLink>
         <FooterLink href="#signup">Cadastre-se</FooterLink>
-        <FooterLink href="#login">Acesse Agora</FooterLink>
-        <FooterLink href="#create-event">Crie Seu Evento</FooterLink>
+        <FooterLink href="#login">Login</FooterLink>
+        <FooterLink href="#create-event">Criar Evento</FooterLink>
       </FooterLinks>
       <FooterText>&copy; 2024 TechHub. Todos os direitos reservados.</FooterText>
     </FooterContainer>
