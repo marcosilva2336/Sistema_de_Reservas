@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,28 +7,8 @@ const FooterContainer = styled.footer`
   color: #fff;
   padding: 10px 20px;
   text-align: center;
-`;
-
-const FooterLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 5px;
-  }
-`;
-
-const FooterLink = styled.a`
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  width: 100%;
+  margin-top: auto;
 `;
 
 const FooterText = styled.p`
@@ -39,12 +19,6 @@ const FooterText = styled.p`
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterLinks>
-        <FooterLink href="#terms">Termos</FooterLink>
-        <FooterLink href="#signup">Cadastre-se</FooterLink>
-        <FooterLink href="#login">Login</FooterLink>
-        <FooterLink href="#create-event">Criar Evento</FooterLink>
-      </FooterLinks>
       <FooterText>&copy; 2024 TechHub. Todos os direitos reservados.</FooterText>
     </FooterContainer>
   );

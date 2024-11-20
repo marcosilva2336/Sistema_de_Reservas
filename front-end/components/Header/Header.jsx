@@ -24,6 +24,18 @@ const Logo = styled.div`
   font-size: 26px;
   font-weight: bold;
   color: rgb(0, 151, 255);
+  cursor: pointer;
+`;
+
+const UserContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
+const UserName = styled.div`
+  font-size: 16px;
+  color: rgb(0, 151, 255);
 `;
 
 const SearchContainer = styled.div`
@@ -183,7 +195,7 @@ const MobileMenu = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ showSearch = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -195,34 +207,42 @@ const Header = () => {
     router.push('/cadastro');
   };
 
+  const handleLogoClick = () => {
+    router.push('/');
+  };
+
   return (
     <FixedContainer>
       <HeaderContainer>
-        <Logo>TechHub</Logo>
+        <Logo onClick={handleLogoClick}>TechHub</Logo>
         <MenuButton onClick={toggleMenu}>
           <FaBars />
         </MenuButton>
-        <SearchContainer>
-          <SearchButton>
-            <FaSearch style={{ color: 'rgb(0, 151, 255)' }} />
-          </SearchButton>
-          <SearchInput type="text" placeholder="Pesquisar..." />
-        </SearchContainer>
+        {showSearch && (
+          <SearchContainer>
+            <SearchButton>
+              <FaSearch style={{ color: 'rgb(0, 151, 255)' }} />
+            </SearchButton>
+            <SearchInput type="text" placeholder="Pesquisar..." />
+          </SearchContainer>
+        )}
         <AccountContainer>
-          <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
+          <CreateEventLink href="/evento">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
           <SignupButton onClick={handleSignupClick}>Cadastre-se</SignupButton>
         </AccountContainer>
       </HeaderContainer>
       <MobileMenu $isOpen={isMenuOpen}>
-        <SearchContainer>
-          <SearchButton>
-            <FaSearch style={{ color: 'rgb(0, 151, 255)' }} />
-          </SearchButton>
-          <SearchInput type="text" placeholder="Pesquisar..." />
-        </SearchContainer>
+        {showSearch && (
+          <SearchContainer>
+            <SearchButton>
+              <FaSearch style={{ color: 'rgb(0, 151, 255)' }} />
+            </SearchButton>
+            <SearchInput type="text" placeholder="Pesquisar..." />
+          </SearchContainer>
+        )}
         <AccountContainer>
-          <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
+          <CreateEventLink href="/evento">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
           <SignupButton onClick={handleSignupClick}>Cadastre-se</SignupButton>
         </AccountContainer>
