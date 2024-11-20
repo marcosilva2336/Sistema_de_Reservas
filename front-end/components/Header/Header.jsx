@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaBars } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 const FixedContainer = styled.div`
   position: absolute;
@@ -184,10 +185,14 @@ const MobileMenu = styled.div`
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
-    console.log("Menu toggled. Current state:", !isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSignupClick = () => {
+    router.push('/cadastro');
   };
 
   return (
@@ -206,7 +211,7 @@ const Header = () => {
         <AccountContainer>
           <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
-          <SignupButton onClick={() => window.location.href = '/cadastro'}>Cadastre-se</SignupButton>
+          <SignupButton onClick={handleSignupClick}>Cadastre-se</SignupButton>
         </AccountContainer>
       </HeaderContainer>
       <MobileMenu $isOpen={isMenuOpen}>
@@ -219,7 +224,7 @@ const Header = () => {
         <AccountContainer>
           <CreateEventLink href="/create-event">Crie seu evento</CreateEventLink>
           <LoginLink href="/login">Acesse sua conta</LoginLink>
-          <SignupButton onClick={() => window.location.href = '/cadastro'}>Cadastre-se</SignupButton>
+          <SignupButton onClick={handleSignupClick}>Cadastre-se</SignupButton>
         </AccountContainer>
       </MobileMenu>
     </FixedContainer>

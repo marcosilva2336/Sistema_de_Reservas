@@ -50,12 +50,6 @@ export const eventosData = [
           date: "Qui, 10 Out · 20:00",
           title: "Curso de Ruby",
           location: "Multiplan Hall - Recife, PE"
-        },
-        {
-          image: "https://via.placeholder.com/250x150",
-          date: "Sex, 11 Out · 17:00",
-          title: "Curso de PHP",
-          location: "Multiplan Hall - Recife, PE"
         }
       ]
     },

@@ -15,20 +15,20 @@ const Container = styled.div`
     margin-top: 40px;
   }
 
-  @media (min-width: 1920px) and (min-height: 1080px){
+  @media (min-width: 1920px) and (min-height: 1080px) {
     padding: 0 48px;
     margin-top: 100px;
   }
 `;
 
 const Section = styled.div`
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
 
-  @media (min-width: 1920px) and (min-height: 1080px){
+  @media (min-width: 1920px) and (min-height: 1080px) {
     margin-bottom: 60px;
   }
 `;
@@ -38,10 +38,10 @@ const SectionHeader = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  position: relative; 
+  position: relative;
 
   @media (max-width: 768px) {
-    flex-direction: column; 
+    flex-direction: column;
     margin-bottom: 10px;
   }
 
@@ -63,7 +63,7 @@ const SectionTitle = styled.h2`
     text-align: center;
   }
 
-  @media (min-width: 1920px) and (min-height: 1080px){
+  @media (min-width: 1920px) and (min-height: 1080px) {
     font-size: 24px;
     margin-left: 150px;
   }
@@ -72,12 +72,12 @@ const SectionTitle = styled.h2`
 const NavButtons = styled.div`
   display: flex;
   gap: 8px;
-  position: absolute; 
+  position: absolute;
   right: 100px;
 
   @media (max-width: 768px) {
-    position: static; 
-    margin-top: 10px; 
+    position: static;
+    margin-top: 10px;
   }
 
   @media (min-width: 1920px) and (min-height: 1080px) {
@@ -138,7 +138,7 @@ const Card = styled.div`
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
@@ -212,7 +212,6 @@ const CardLocation = styled.div`
   }
 `;
 
-
 const Eventos = ({ filters }) => {
   const [currentPage, setCurrentPage] = useState([]);
 
@@ -239,12 +238,12 @@ const Eventos = ({ filters }) => {
   );
 
   useEffect(() => {
-    if (nonEmptySections && nonEmptySections.length > 0) {
+    if (nonEmptySections.length > 0) {
       setCurrentPage(nonEmptySections.map(() => 0));
     }
-  }, [nonEmptySections]);
+  }, [filters]);
 
-  if (!nonEmptySections || nonEmptySections.length === 0) {
+  if (nonEmptySections.length === 0) {
     return <div>Não há eventos disponíveis.</div>;
   }
 
