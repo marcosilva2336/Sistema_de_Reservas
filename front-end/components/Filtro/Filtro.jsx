@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaUsers, FaLaptopCode, FaGamepad, FaBook, FaMicrochip, FaRobot, FaNetworkWired, FaDatabase } from 'react-icons/fa';
 
@@ -20,8 +20,6 @@ const InspirationalText = styled.h1`
     margin-left: 0;
     text-align: center;
   }
-
-
 `;
 
 const FiltersContainer = styled.div`
@@ -44,8 +42,8 @@ const FilterCard = styled.div`
   width: 115px;
   height: 115px;
   border-radius: 50%;
-  background-color: #fdf9f9;
-  color: rgb(0, 151, 255);
+  background-color: ${({ selected }) => (selected ? 'rgb(0, 151, 255)' : '#fdf9f9')};
+  color: ${({ selected }) => (selected ? '#fff' : 'rgb(0, 151, 255)')};
   transition: transform 0.3s, background-color 0.3s;
   cursor: pointer;
 
@@ -55,7 +53,6 @@ const FilterCard = styled.div`
     color: #fff;
   }
 
-  
   @media (min-width: 1920px) and (min-height: 1080px) {
     width: 154px;
     height: 154px;
@@ -74,69 +71,80 @@ const FilterName = styled.span`
   margin-top: 10px; 
 `;
 
-const Filtro = () => {
+const Filtro = ({ onFilterChange }) => {
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const toggleFilter = (filter) => {
+    const newFilters = selectedFilters.includes(filter)
+      ? selectedFilters.filter((f) => f !== filter)
+      : [...selectedFilters, filter];
+
+    setSelectedFilters(newFilters);
+    onFilterChange(newFilters);
+  };
+
   return (
     <Container>
       <InspirationalText>Explore o mundo da tecnologia!</InspirationalText>
       <FiltersContainer>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('comunidade')}>
+          <FilterCard selected={selectedFilters.includes('comunidade')}>
             <FilterIcon>
               <FaUsers />
             </FilterIcon>
           </FilterCard>
           <FilterName>Comunidade</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('hackathon')}>
+          <FilterCard selected={selectedFilters.includes('hackathon')}>
             <FilterIcon>
               <FaLaptopCode />
             </FilterIcon>
           </FilterCard>
           <FilterName>Hackathon</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('games')}>
+          <FilterCard selected={selectedFilters.includes('games')}>
             <FilterIcon>
               <FaGamepad />
             </FilterIcon>
           </FilterCard>
           <FilterName>Games</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('programação')}>
+          <FilterCard selected={selectedFilters.includes('programação')}>
             <FilterIcon>
               <FaBook />
             </FilterIcon>
           </FilterCard>
           <FilterName>Programação</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('hardware')}>
+          <FilterCard selected={selectedFilters.includes('hardware')}>
             <FilterIcon>
               <FaMicrochip />
             </FilterIcon>
           </FilterCard>
           <FilterName>Hardware</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('robótica')}>
+          <FilterCard selected={selectedFilters.includes('robótica')}>
             <FilterIcon>
               <FaRobot />
             </FilterIcon>
           </FilterCard>
           <FilterName>Robótica</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('redes')}>
+          <FilterCard selected={selectedFilters.includes('redes')}>
             <FilterIcon>
               <FaNetworkWired />
             </FilterIcon>
           </FilterCard>
           <FilterName>Redes</FilterName>
         </FilterWrapper>
-        <FilterWrapper>
-          <FilterCard>
+        <FilterWrapper onClick={() => toggleFilter('banco de dados')}>
+          <FilterCard selected={selectedFilters.includes('banco de dados')}>
             <FilterIcon>
               <FaDatabase />
             </FilterIcon>

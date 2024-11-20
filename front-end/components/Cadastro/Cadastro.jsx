@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
   transition: transform 0.5s ease, height 0.2s ease;
-  ${({ isClosing }) => isClosing && css`
+  ${({ $isClosing }) => $isClosing && css`
     animation: ${dismissEffect} 0.5s forwards;
   `}
 `;
@@ -188,7 +188,7 @@ const Cadastro = () => {
   };
 
   return (
-    <Wrapper isClosing={isClosing}>
+    <Wrapper $isClosing={isClosing}>
       <IconClose onClick={handleClose}>
         <FaTimes />
       </IconClose>
